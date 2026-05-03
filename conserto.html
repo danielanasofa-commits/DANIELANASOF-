@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DANIELANASOFÁ | Restauração & Conserto</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/conserto.css">
+  <script src="scripts/conserto.js" defer></script>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <h2>DANIELANASOFÁ</h2>
+    </div>
+    <a href="index.html" style="color:var(--gold); text-decoration:none; font-weight:500;">
+      <i class="fas fa-arrow-left"></i> Voltar à Loja
+    </a>
+  </nav>
+
+  <div class="container">
+    <div class="header-text">
+      <h1 class="title">Restauração Profissional</h1>
+      <p class="subtitle">Dê uma nova vida ao seu mobiliário. Especialistas em estofaria, estrutura e acabamentos de
+        alto padrão.</p>
+    </div>
+
+    <div class="conserto-card">
+      <form id="consertoForm" onsubmit="enviarPedido(event)">
+
+        <div class="section-header">
+          <h3><i class="fas fa-tools"></i> Identificação do Cliente</h3>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Nome do Proprietário</label>
+            <input type="text" id="nome" placeholder="Nome completo" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fab fa-whatsapp"></i> WhatsApp para Contacto</label>
+            <input type="tel" id="telefone" placeholder="+244" required>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> Localização (Luanda/Outra)</label>
+            <input type="text" id="local" placeholder="Ex: Talatona, Kilamba..." required>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h3><i class="fas fa-stethoscope"></i> Diagnóstico do Item</h3>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label><i class="fas fa-couch"></i> Tipo de Mobiliário</label>
+            <select id="tipo">
+              <option value="Sofá">Sofá (2-5 lugares)</option>
+              <option value="Poltrona">Poltrona</option>
+              <option value="Cadeira de Jantar">Cadeiras de Jantar (Conjunto)</option>
+              <option value="Cabeceira">Cabeceira de Cama</option>
+              <option value="Outro">Outro Mobiliário Estofado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-exclamation-triangle"></i> Problema Principal</label>
+            <select id="problema">
+              <option value="Estofamento/Tecido">Troca de Tecido / Revestimento</option>
+              <option value="Espuma/Conforto">Substituição de Espuma (Afundamento)</option>
+              <option value="Estrutura/Madeira">Reparo na Estrutura de Madeira</option>
+              <option value="Molas/Cintas">Conserto de Molas ou Cintas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group full-width" style="margin-top: 20px;">
+          <label><i class="fas fa-camera"></i> Fotos do Estado Atual</label>
+          <div class="upload-box"
+            onclick="alert('Funcionalidade de upload: Anexe as fotos diretamente no WhatsApp para uma avaliação precisa.')">
+            <i class="fas fa-images"></i>
+            <p>Clique para selecionar fotos ou arraste aqui</p>
+            <small>(Obrigatório para orçamento prévio)</small>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label><i class="fas fa-align-left"></i> Descrição do Pedido</label>
+          <textarea id="descricao" rows="4" placeholder="Descreva detalhadamente o que deseja restaurar..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+        </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

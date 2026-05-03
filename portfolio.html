@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact L'Atelier | DANIELANASOFÁ</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@100;200;300;400&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="styles/portfolio.css">
+        <script src="scripts/portfolio.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Nosso Portfólio</h1>
+        <p>Artesanato e Design em Angola</p>
+    </header>
+
+    <div id="cursor"></div>
+    <div id="cursor-aura"></div>
+
+    <main class="main-container">
+
+        <section class="info-side">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80"
+                alt="Showroom">
+            <h2>Onde a<br>Visão Ganha<br>Forma.</h2>
+            <div class="contact-details">
+                <p><span>LOCAL.</span> Luanda, Estrada N-230, 2FGJ+836</p>
+                <p><span>WHATSAPP.</span> +244 958 987 366</p>
+                <p><span>EMAIL.</span> danielanasofa@gmail.com</p>
+                <p><span>HORA.</span> Seg — Sáb, 07:30 - 19:00</p>
+            </div>
+        </section>
+
+        <form id="whatsappForm" action="#">
+            <div class="input-group">
+                <input type="text" id="nome" required>
+                <label>Seu Nome Completo</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" required>
+                <label>Endereço de E-mail</label>
+            </div>
+
+            <div class="input-group">
+                <textarea id="descricao" rows="1" required></textarea>
+                <label>Descreva a sua visão ou peça</label>
+            </div>
+
+            <div class="submit-container">
+                <button type="submit" class="submit-btn">Enviar Mensagem</button>
+            </div>
+        </form>
+
+        <div class="social-mini">
+            <a href="https://www.instagram.com/danielanasofa/#">INSTAGRAM</a>
+            <a href="https://www.facebook.com/share/1FRG1cn5eg/">FACEBOOK</a>
+            <a href="https://x.com/@danielanasofa">TWITTER</a>
+        </div>
+        </section>
+
+    </main>
+
+    <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">CHRYSALIS</button>
+        <button class="filter-btn" data-filter="sofas">CHETERFIELD</button>
+        <button class="filter-btn" data-filter="restauros">GREENDAILY</button>
+        <button class="filter-btn" data-filter="projetos">ROYAL HONOUR</button>
+    </div>
+
+    <main class="portfolio-grid" id="portfolio-grid">
+
+        <article class="portfolio-item" data-category="sofas">
+            <div class="item-image"><img
+                    src="https://i.ibb.co/VWpFT1nq/chrysalis-1.jpg"></div>
+            <div class="item-details">
+                <span>Sofás</span>
+                <h3>Modelo Chrysalis</h3>
+            </div>
+        </article>
+
+        <article class="portfolio-item" data-category="restauros">
+            <div class="item-image"><img
+                    src="https://i.ibb.co/qFg5Lv5y/cheterfield-0.jpg"></div>
+            <div class="item-details">
+                <span>Restauros</span>
+                <h3>Modelo Cheterfield</h3>
+            </div>
+        </article>
+
+        <article class="portfolio-item" data-category="projetos">
+            <div class="item-image"><img
+                    src="https://i.ibb.co/N2V0xBks/greendaily-1.jpg"></div>
+            <div class="item-details">
+                <span>Projectos</span>
+                <h3>Modelo Greendaily</h3>
+            </div>
+        </article>
+
+        <article class="portfolio-item" data-category="sofas">
+            <div class="item-image"><img
+                    src="https://i.ibb.co/pry5RHq7/royal-honour-0.jpg"></div>
+            <div class="item-details">
+                <span>Sofás</span>
+                <h3>Modelo Royal Honour</h3>
+            </div>
+        </article>
+
+    </main>
+</body>
+
+</html>

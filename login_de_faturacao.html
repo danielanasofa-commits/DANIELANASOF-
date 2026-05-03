@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DANIELANASOFÁ | Portal de Faturação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/login_de_faturacao.css">
+  <script src="scripts/login_de_faturacao.js" defer></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><h2>DANIELANASOFÁ</h2></div>
+    <a href="index.html" style="color:var(--gold); text-decoration:none; font-weight:500;">← Sair</a>
+  </nav>
+
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <i class="fas fa-receipt"></i>
+        <h1>Faturação & Comprovativos</h1>
+        <p>Aceda aos seus documentos sem palavra-passe utilizando os dados da sua compra.</p>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-info-circle"></i> Para sua segurança, os dados abaixo devem coincidir exatamente com os fornecidos no momento da reserva ou compra.
+      </div>
+
+      <form id="faturacaoForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label><i class="fas fa-hashtag"></i> NIF / Número de BI</label>
+            <input type="text" placeholder="Ex: 541728392" required>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-shopping-bag"></i> Referência da Encomenda</label>
+            <input type="text" placeholder="Ex: DS-2026-X" required>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> Localidade / Província</label>
+            <select required>
+              <option value="">Selecione...</option>
+              <option value="Luanda">Luanda</option>
+              <option value="Benguela">Benguela</option>
+              <option value="Huambo">Huambo</option>
+              <option value="Outra">Outra (Envio Nacional)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-phone"></i> Contacto Associado</label>
+            <input type="tel" placeholder="+244 9..." required>
+          </div>
+
+          <div class="form-group full-width">
+            <label><i class="fas fa-store-alt"></i> Canal de Aquisição</label>
+            <select required>
+              <option value="presencial">Compra Presencial (Showroom)</option>
+              <option value="distancia">Compra à Distância (WhatsApp / Online)</option>
+              <option value="personalizado">Encomenda Sob Medida</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn">
+          Verificar e Visualizar Faturas
+        </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

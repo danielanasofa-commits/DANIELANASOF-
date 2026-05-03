@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DANIELANASOFÁ | Sofás e Cadeirões Premium</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/scripts.js" defer></script>
+
+</head>
+
+<body>
+
+  <div class="terms-popup" id="termsPopup">
+    <div class="terms-content">
+      <h2>Termos de Uso</h2>
+      <p>
+        Ao continuar navegando no site da <strong>DANIELANASOFÁ</strong>, você concorda com nossos
+        <strong>Termos de Uso</strong>, <strong>Política de Privacidade</strong>
+        e <strong>Política de Reembolso</strong>.
+      </p>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="acceptCheckbox">
+        <label for="acceptCheckbox">Li e concordo com os termos acima</label>
+      </div>
+
+      <div class="terms-buttons">
+        <button class="terms-btn read" onclick="window.open('Termos_de_Uso.html', '_blank')">
+          Ler os Termos Completos
+        </button>
+        <button class="terms-btn accept" id="acceptBtn" onclick="acceptTerms()" disabled>
+          Aceitar e Continuar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <nav class="navbar">
+    <div class="logo">
+      <h2>DANIELANASOFÁ</h2>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="nav-menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Início</a>
+    <a href="comprar.html"><i class="fas fa-shopping-cart"></i> Comprar</a>
+    <a href="encomendar.html"><i class="fas fa-box-open"></i> Encomendar</a>
+    <a href="conserto.html"><i class="fas fa-tools"></i> Pedir Conserto</a>
+    <a href="servicos.html"><i class="fas fa-concierge-bell"></i> Serviços</a>
+    <a href="login_de_faturacao.html"><i class="fas fa-user-circle"></i> Login</a>
+    <a href="about_us.html"><i class="fas fa-info-circle"></i> Sobre Nós</a>
+    <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfólio</a>
+    <a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a>
+    <a href="suporte_tecnico.html" style="visibility: hidden;"><i class="fas fa-headset"></i> Suporte & Ajuda</a>
+  </div>
+
+  <section class="hero-section" id="hero">
+    <div id="dot"></div>
+    <div id="ring"></div>
+    <canvas id="canvas"></canvas>
+
+    <div class="hero-content">
+      <h1>Design <span>Exclusivo</span></h1>
+      <p style="color: #666; margin-top: 10px;">O cursor desaparece ao sair desta secção.</p>
+      <a href="#colecao" class="btn-primary">
+        Explorar Coleção
+      </a>
+    </div>
+  </section>
+
+  <section class="next-section">
+    <h2 class="section-title">Nossa Coleção Exclusiva</h2>
+  </section>
+
+  <!-- Ícone Flutuante Suporte Técnico - Estilo Elegante DANIELANASOFÁ -->
+  <a href="WAP/chat.html" class="chat-support-elegante" title="Suporte Técnico" style="visibility: hidden;">
+    <i class="fa-solid fa-headset"></i>
+  </a>
+
+  <!-- CARROSSEL -->
+  <section id="colecao" class="carousel-section">
+    <div class="desc">Design, conforto e exclusividade ideal para o seu lar</div>
+    <p class="into-text">Comece aqui a jornada para mobiliar a casa dos seus sonhos com peças que unem estilo e funcionalidade.</p>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" id="prevBtn">‹</button>
+      <div class="carousel" id="sofaCarousel"></div>
+      <button class="carousel-btn next" id="nextBtn">›</button>
+    </div>
+
+    <div class="carousel-dots" id="dots"></div>
+  </section>
+
+  <!-- MODAL DE DETALHES -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <span class="close-btn" id="closeModal">×</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-info">
+          <h3 id="modalName"></h3>
+          <p class="modal-price" id="modalPrice"></p>
+          <p class="modal-installment" id="modalInstallment"></p>
+
+          <div class="specs">
+            <p><strong>Material:</strong> <span id="modalMaterial"></span></p>
+            <p><strong>Dimensões:</strong> <span id="modalDimensions"></span></p>
+            <p><strong>Capacidade:</strong> <span id="modalCapacity"></span></p>
+            <p><strong>Garantia máxima:</strong> 5 anos</p>
+            <p><strong>Entrega em Luanda:</strong> Envio ao domicílio</p>
+          </div>
+
+          <p id="modalDescription" style="margin-top: 20px; color: #ccc; line-height: 1.7;"></p>
+
+          <div class="modal-buttons">
+            <a href="#" class="modal-btn modal-btn-buy" id="buyNowBtn">Comprar Agora</a>
+            <a href="#" class="modal-btn modal-btn-close" id="closeModalBtn">Fechar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-emphatic reveal">Explore os diferenciais estratégicos que definem o nosso padrão de entrega</p>
+
+  <section class="container">
+    <div class="card reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+          <path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+          <path d="M5 17H3v-4M2 9h11v12M13 17h6M19 17h2v-6h-8M7 9V5h5l3 5" />
+          <path d="M3 9l4 0" />
+          <path d="M16 9l3 0" />
+        </svg>
+      </div>
+      <h3>Entrega por Encomenda</h3>
+      <p>Entregamos <strong>quase em toda Angola</strong>. Rápido, seguro e com rastreamento para qualquer província do país.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+          <circle cx="16" cy="8" r="1" />
+        </svg>
+      </div>
+      <h3>Encomenda Personalizada</h3>
+      <p>Já pode fazer pedido por encomenda personalizada a partir do nosso website de forma exclusiva.</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="5" width="20" height="14" rx="2" ry="2" />
+          <line x1="2" y1="10" x2="22" y2="10" />
+          <path d="M7 15h.01" />
+          <path d="M11 15h.01" />
+          <path d="M15 15h.01" />
+          <path d="M18 15h.01" />
+          <circle cx="6" cy="15" r="1" />
+        </svg>
+      </div>
+      <h3>Pagamento na Entrega</h3>
+      <p><strong>Cash On Delivery</strong> ou Unitel Money, PayPay e Express — pague somente após confirmar o
+        recebimento.</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2L3 7v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-3-5H6z" />
+          <path d="M3 7h18" />
+          <path d="M16 11a4 4 0 0 1-8 0" />
+          <circle cx="12" cy="13" r="1" />
+          <path d="M9 17h6" />
+        </svg>
+      </div>
+      <h3>Simplicidade em Comprar</h3>
+      <p>Interface intuitiva e segura. Escolha o seu design, adicione ao atelier virtual e finalize com poucos cliques.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">FACILITADO</div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+          <path d="M12 12v6" />
+          <path d="M10 13h4a2 2 0 1 0 0-4h-4a2 2 0 1 1 0-4h4" />
+        </svg>
+      </div>
+      <h3>Pagamento em Prestações</h3>
+      <p>Divida o investimento em parcelas mensais que respeitam o seu planeamento financeiro.</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          <path d="M18 8l-2 2" />
+          <path d="M4 20l2-2" />
+          <circle cx="7" cy="14" r="2" />
+          <circle cx="17" cy="10" r="2" />
+        </svg>
+      </div>
+      <h3>Conserto e Reparação</h3>
+      <p>Maestria técnica na restauração de peças, garantindo que o seu mobiliário recupere a glória original.</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">OFERTA ESPECIAL</div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+          <circle cx="12" cy="12" r="3.5" />
+          <path d="M9 9l6 6" />
+          <path d="M15 9l-6 6" />
+        </svg>
+      </div>
+      <h3>Descontos Exclusivos</h3>
+      <p>Condições especiais para projetos corporativos e clientes recorrentes do nosso atelier.</p>
+    </div>
+  </section>
+  
+    <section class="testimonials-section" style="padding: 60px 20px; background: #1a1a1a; text-align: center;">
+    <h2 class="section-title" style="font-size: 1.40rem; margin: 0rem 1.25rem 0rem 1.25rem;">O que dizem nossos clientes</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+      
+      <div style="background: #252525; padding: 30px; border-radius: 15px; flex: 1; min-width: 280px; border-top: 3px solid #c9a96e;">
+        <div style="color: #d4af37; margin-bottom: 15px;">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p style="font-style: italic; color: #ccc; margin-bottom: 20px;">"A qualidade do sofá superou as minhas expectativas. O acabamento é impecável e a entrega em Luanda foi muito rápida."</p>
+        <h4 style="color: #fff; font-family: 'Playfair Display', serif;">— Maria Antónia, Talatona</h4>
+      </div>
+
+      <div style="background: #252525; padding: 30px; border-radius: 15px; flex: 1; min-width: 280px; border-top: 3px solid #c9a96e;">
+        <div style="color: #d4af37; margin-bottom: 15px;">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p style="font-style: italic; color: #ccc; margin-bottom: 20px;">"Fiz uma encomenda personalizada e o resultado foi um cadeirão único que é o destaque da minha sala. Recomendo vivamente!"</p>
+        <h4 style="color: #fff; font-family: 'Playfair Display', serif;">— João Carlos, Benguela</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="newsletter-section" style="padding: 80px 20px; background: #111; text-align: center; border-top: 1px solid #333;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-family: 'Monteserrat', sans-serif; font-size: 1.40rem; color: #fff; margin-bottom: 15px;">Receba Novidades e Ofertas</h2>
+      <p style="color: #888; margin-bottom: 30px;">Subscreva a nossa newsletter para ter acesso antecipado às novas coleções e descontos exclusivos do atelier.</p>
+      <form style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+        <input type="email" placeholder="Seu melhor e-mail" required style="padding: 15px 20px; border-radius: 30px; border: 1px solid #444; background: #222; color: #fff; flex: 1; min-width: 250px; outline: none;">
+        <button type="submit" class="btn-primary" style="padding: 15px 65px; cursor: pointer; border: none;">Subscrever</button>
+      </form>
+    </div>
+  </section>
+
+  <section style="padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://i.ibb.co/NgL2PKZW/greendaily-2.jpg'); background-size: cover; background-position: center;">
+    <h2 style="font-family: 'Monteserrat', sans-serif; font-size: 2.75rem; color: #fff; margin-bottom: 20px;">Transforme o seu ambiente hoje</h2>
+    <p style="color: #ddd; max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.6;">A elegância que você merece com o conforto que a sua família precisa. Visite o nosso atelier virtual ou fale com um consultor.</p>
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://wa.me/message/CZ5BKTPKQHWEH1" class="btn-primary" style="text-decoration: none; padding: 1rem 2.65rem;">Falar no WhatsApp</a>
+    </div>
+  </section>
+  
+  <section style="padding: 80px 20px; background: #0f0f0f;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+    <div style="flex: 1; min-width: 300px;">
+      <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&w=800&q=80" alt="Madeira de alta qualidade" style="width: 100%; border-radius: 20px; filter: grayscale(30%);">
+    </div>
+    <div style="flex: 1; min-width: 300px;">
+      <h2 style="font-family: 'Playfair Display', serif; color: #c9a96e; font-size: 2.55rem; margin-bottom: 20px;">A Engenharia do Conforto</h2>
+      <p style="color: #888; line-height: 1.8; margin-bottom: 15px;">Cada peça da <strong>DANIELANASOFÁ</strong> é construída com estruturas de madeira maciça tratada, garantindo décadas de estabilidade.</p>
+      <ul style="list-style: none; padding: 0; color: #888;">
+        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #fff; margin-right: 10px;"></i> Espumas de alta densidade (D33+)</li>
+        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #fff; margin-right: 10px;"></i> Molas ensacadas individualmente</li>
+        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #fff; margin-right: 10px;"></i> Tecidos hidrorrepelentes e "Pet Friendly"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <section style="padding: 80px 20px; background: #fff; color: #111;">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <span style="text-transform: uppercase; letter-spacing: 2px; color: #d4af37; font-weight: bold;">Sustentabilidade</span>
+    <h2 style="font-family: 'Monteserrat', sans-serif; font-size: 2.65rem; margin: 1rem 1.25rem 0rem 1.25rem;">Dê uma nova vida ao seu clássico</h2>
+    <p style="text-align: left; font-size: 1.1rem; color: #888; line-height: 1.8; margin-top: 20px;">Não acreditamos em mobiliário descartável. O nosso <strong>Atelier de Restauro</strong> transforma peças antigas ou danificadas em obras-primas contemporâneas.</p>
+    <p style="text-align: left; font-size: 1.1rem; color: #888; line-height: 1.8; margin-top: 20px;">Uma escolha consciente para o ambiente e para o seu legado familiar.</p>
+    <a href="conserto.html" style="display: inline-block; margin-top: 30px; padding: 15px 40px; background: #111; color: #fff; text-decoration: none; border-radius: 5px; font-weight: 600; transition: background 0.3s;">Ir para Conserto</a>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="contact-section">
+      <div class="map-section">
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126153.218529241!2d13.160161!3d-8.836804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f151952e4667%3A0x86e680a6d36e897e!2sLuanda%2C%20Angola!5e0!3m2!1spt-PT!2s!4v1700000000000!5m2!1spt-PT!2s"
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <h3>Endereço</h3>
+      <p>
+        <a href="https://goo.gl/maps/AiCg4FGGxuLYdgib8?g_st=ac" target="_blank" class="map-link">Abrir localização da Loja na app Google Maps</a>
+        <span class="map-icon">📍</span>
+      </p>
+      <p>Estrada de Catete (Estrada Nacional n° 230 — EN-230)</p>
+      <p>Luanda</p>
+      <p>Município de Viana</p>
+      <p>Distrito de Baia – Km 30</p>
+      <p>Angola</p>
+      <h3>Contate-nos!</h3>
+      <p>
+        <a href="tel:+244 126" class="report-link">Denunciar mal atendimento ao INADEC</a>
+      </p>
+      <p>Para mais informações ligar <a href="tel:+244 921 484 506">+244 921 484 506</a></p>
+      <p>Para mais informações ligar <a href="tel:+244 958 987 366">+244 958 987 366</a></p>
+      <p><a href="mailto:danielanasofa@gmail.com" class="email-link">Enviar e-mail para a Loja (clicar aqui)</a></p>
+    </div>
+    <hr class="gold-divider">
+    <div class="social-section">
+      <p class="follow-text">Siga-nos nas redes sociais</p>
+      <div class="social-icons">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/1FRG1cn5eg/"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/facebook.svg" width="36" height="36"
+            alt="Facebook"></a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@danielanasofa?si=nP-0ZOKsCgHgXQA3"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/youtube.svg" width="36" height="36"
+            alt="YouTube"></a>
+        <!-- X (antigo Twitter) -->
+        <a href="https://x.com/@danielanasofa"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/x.svg" width="36" height="36"
+            alt="Twitter/X"></a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/danielanasofa/#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/instagram.svg" width="36" height="36"
+            alt="Instagram"></a>
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@danielanasofa2026"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/tiktok.svg" width="36" height="36"
+            alt="TikTok"></a>
+      </div>
+    </div>
+    <div class="legal-section">
+      <a href="Termos_de_Uso.html">Termos de Uso</a>
+      <span class="separator">•</span>
+      <a href="Politica_de_Privacidade.html">Política de Privacidade</a>
+      <span class="separator">•</span>
+      <a href="Politica_de_Reembolso.html">Política de Reembolso</a>
+    </div>
+    <div class="copyright-section">
+      © 2026 <span class="creator">DANIELANASOFÁ
+      </span> - Todos os
+      direitos reservados.
+    </div>
+    <!-- Curva decorativa inferior (opcional) -->
+    <div class="footer-wave"></div>
+  </footer>
+</body>
+
+</html>
