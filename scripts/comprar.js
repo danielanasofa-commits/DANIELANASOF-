@@ -55,7 +55,7 @@
       e.preventDefault();
       if (!selectedMethod || !selectedPaymentMethod) return alert("Selecione os métodos.");
       const msg = `Olá! Quero o ${currentProduct.nome} (${Number(currentProduct.preco).toLocaleString('pt-AO')} Kz). Pagamento: ${selectedPaymentMethod.toUpperCase()}. Nome: ${document.getElementById('nome').value}`;
-      window.open(`https://wa.me/244921484506text=${encodeURIComponent(msg)}`, '_blank');
+      window.open(`https://wa.me/244921484506?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     window.onload = loadProduct;
